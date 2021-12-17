@@ -4,6 +4,8 @@ dash
 bentoml
 scikit-learn
 pandas
+numpy
 matplotlib
 rq
 bentoml
+jupyter
