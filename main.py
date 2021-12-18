@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/predict', methods=['GET'])
 def predict():
     model = pickle.load(open("models/lg_model.pkl", "rb"))
-    data_test = pd.read_csv('Data/test.csv', index_col='Id')
+    data_test = pd.read_csv('data/test.csv', index_col='Id')
     test_features = data_test.drop(columns=['Open Date', 'City', 'City Group', 'Type'])
     prediction = model.predict(test_features).tolist()
     return json.dumps(prediction)
